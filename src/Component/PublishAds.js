@@ -68,7 +68,8 @@ const PublishAds = () => {
       }));
   
       try {
-        const response = await axios.post("http://localhost:8080/ads/upload", formDataToSend, {
+        //previousUrl:http://localhost:8080/ads/upload
+        const response = await axios.post("https://newsapp-latest.onrender.com/ads/upload", formDataToSend, {
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': 'Basic ' + btoa('Hello:123') // Basic Auth

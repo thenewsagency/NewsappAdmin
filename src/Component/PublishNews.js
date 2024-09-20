@@ -79,8 +79,8 @@ const PublishNews = () => {
        // console.log(formDataToSend.keys(formData)+"Sdfsdfsdfdsfsdfds");
 
        
-        
-        const response = await axios.post('http://localhost:8080/fileSystem', formDataToSend, {
+        //previousUrl:'http://localhost:8080/fileSystem'
+        const response = await axios.post('https://newsapp-latest.onrender.com/fileSystem', formDataToSend, {
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: 'Basic ' + btoa('Hello:123'), // Basic Auth
