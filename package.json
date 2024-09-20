@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/thenewsagency/NewsappAdmin.git",
+  "homepage": "https://thenewsagency.github.io/NewsappAdmin",
   "name": "newsapp_admin",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +12,7 @@
     "axios": "^1.7.4",
     "base-64": "^1.0.0",
     "bootstrap": "^5.3.3",
+    "gh-pages": "^6.1.1",
     "newsapp_admin": "file:",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "start": "react-scripts start",
     "test": "react-scripts test",
