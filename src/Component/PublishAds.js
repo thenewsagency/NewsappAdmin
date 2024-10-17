@@ -10,17 +10,13 @@ import axios from 'axios';
 const PublishAds = () => {
   const [formData, setFormData] = useState({
     hindiHeadline: '',
-    hindiDetails: '',
     englishHeadline: '',
-    englishDetails: '',
     file: null,
   });
 
   const [errors, setErrors] = useState({
     hindiHeadline: '',
-    hindiDetails: '',
     englishHeadline: '',
-    englishDetails: '',
     file: '',
   });
 
@@ -37,9 +33,9 @@ const PublishAds = () => {
   const validateForm = () => {
     const newErrors = {};
     if (!formData.hindiHeadline) newErrors.hindiHeadline = 'Headline is required';
-    if (!formData.hindiDetails) newErrors.hindiDetails = 'Details are required';
+   
     if (!formData.englishHeadline) newErrors.englishHeadline = 'Headline is required';
-    if (!formData.englishDetails) newErrors.englishDetails = 'Details are required';
+    
 
     if (formData.file && formData.file.size > 10 * 1024 * 1024) {
       newErrors.file = 'File size must be less than 10 MB';
@@ -51,6 +47,10 @@ const PublishAds = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    console.log(e);
+    
+
     if (validateForm()) {
       const formDataToSend = new FormData();
       
@@ -59,17 +59,19 @@ const PublishAds = () => {
       formDataToSend.append("AdsHindi", JSON.stringify({
         AdsHindiDetail_ID: 123, // Replace with actual ID
         Headline: formData.hindiHeadline,
-        Contain: formData.hindiDetails,
+        
       }));
       formDataToSend.append("AdsEnglish", JSON.stringify({
         AdsEnglishDetail_ID: 123, // Replace with actual ID
         Headline: formData.englishHeadline,
-        Contain: formData.englishDetails,
+       
       }));
   
+      
       try {
         //previousUrl:http://localhost:8080/ads/upload
-        const response = await axios.post("https://newsapp-latest.onrender.com/ads/upload", formDataToSend, {
+        //api link https://newsapp-latest.onrender.com/ads/upload
+        const response = await axios.post("http://srv620732.hstgr.cloud:8080/ads/upload", formDataToSend, {
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': 'Basic ' + btoa('Hello:123') // Basic Auth
@@ -82,9 +84,7 @@ const PublishAds = () => {
         // Clear the form
         setFormData({
           hindiHeadline: '',
-          hindiDetails: '',
           englishHeadline: '',
-          englishDetails: '',
           file: null,
         });
         setErrors({});
@@ -136,20 +136,7 @@ const PublishAds = () => {
                 {errors.hindiHeadline}
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="hindiDetails">
-              <Form.Label>Ads Details</Form.Label>
-              <Form.Control 
-                as="textarea" 
-                rows={3} 
-                name="hindiDetails"
-                value={formData.hindiDetails}
-                onChange={handleChange}
-                isInvalid={!!errors.hindiDetails}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.hindiDetails}
-              </Form.Control.Feedback>
-            </Form.Group>
+       
 
             <h3>English Ads</h3>
             <Form.Group className="mb-3" controlId="englishHeadline">
@@ -166,20 +153,7 @@ const PublishAds = () => {
                 {errors.englishHeadline}
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="englishDetails">
-              <Form.Label>Ads Details</Form.Label>
-              <Form.Control 
-                as="textarea" 
-                rows={3} 
-                name="englishDetails"
-                value={formData.englishDetails}
-                onChange={handleChange}
-                isInvalid={!!errors.englishDetails}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.englishDetails}
-              </Form.Control.Feedback>
-            </Form.Group>
+
 
             <Form.Group controlId="formFile" className="mb-3">
               <Form.Label>Upload File</Form.Label>

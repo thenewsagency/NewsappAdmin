@@ -15,7 +15,11 @@ const NavbarDisplay = () => {
           <Nav.Link as={Link} to="/Publish_news">Publish News</Nav.Link>
           <Nav.Link as={Link} to="/publish_ads">Publish Ads</Nav.Link>
           <Nav.Link as={Link} to="/SetBanner">Banner</Nav.Link>
+          <Nav.Link as={Link} to="/getAdsId">Ad's ID</Nav.Link>
           <Nav.Link as={Link} to="/DeleteItem">Delete</Nav.Link>
+          {/*
+          active this feature in next update 
+          <Nav.Link as={Link} to="/search">Search</Nav.Link> */}
           <Nav.Link as={Link} to="/Logout">LogOut</Nav.Link>
 
         </Nav>

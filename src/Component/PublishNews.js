@@ -80,7 +80,8 @@ const PublishNews = () => {
 
        
         //previousUrl:'http://localhost:8080/fileSystem'
-        const response = await axios.post('https://newsapp-latest.onrender.com/fileSystem', formDataToSend, {
+        //previousUrl:https://newsapp-latest.onrender.com/fileSystem
+        const response = await axios.post('http://srv620732.hstgr.cloud:8080/fileSystem', formDataToSend, {
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: 'Basic ' + btoa('Hello:123'), // Basic Auth

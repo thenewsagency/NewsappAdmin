@@ -67,7 +67,8 @@ const handleSubmit = async (e) => {
     //submitBannerOrder(formData)
     try {
         //previouUrl:http://localhost:8080/banner/order
-        await axios.post('https://newsapp-latest.onrender.com/banner/order', formData, {
+        //previouUrl:https://newsapp-latest.onrender.com/banner/order
+        await axios.post('http://srv620732.hstgr.cloud:8080/banner/order', formData, {
         auth: {
           username: 'hello',
           password: '123'

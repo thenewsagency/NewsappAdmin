@@ -8,6 +8,8 @@ import Logginpage from './Logginpage';
 import NavbarDisplay from './NavbarDisplay';
 import PrivateRoute from './PrivateRoute'
 import Logout from './Logout';
+import AdsId from './AdsId';
+import SearchNews from './SearchNews';
 
 
 
@@ -27,6 +29,8 @@ const MainRoute = () => {
           <Route path="/Publish_news" element={<PublishNews />} />
           <Route path="/publish_ads" element={<PublishAds />} />
           <Route path="/SetBanner" element={<BannerOrder />} />
+          <Route path="/getAdsId" element={<AdsId />} />
+          <Route path="/search" element={<SearchNews />} />
           <Route path="/DeleteItem" element={<Deletitem />} />
         </Route>
       </Routes>
