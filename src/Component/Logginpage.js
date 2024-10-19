@@ -56,7 +56,7 @@ const Logginpage = () => {
           value={userPassword} 
           onChange={handlePasswordChange} 
         />
-        <Submit onClick={handleSubmit}>Submit</Submit>
+        <Submit onClick={handleSubmit}>Login </Submit>
         
         <Title />
         <Logo>⚛️</Logo>
