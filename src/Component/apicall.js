@@ -10,7 +10,7 @@ export const submitBannerOrder = async (formData) => {
   try {
     //previousUrl:http://localhost:8080/banner/order
     //previousUrl:https://newsapp-latest.onrender.com/banner/order
-    const response = await axios.post('http://srv620732.hstgr.cloud:8080/banner/order', formData, {
+    const response = await axios.post('https://srv620732.hstgr.cloud:8443/banner/order', formData, {
       auth: {
         username: 'hello',
         password: '123'

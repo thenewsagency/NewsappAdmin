@@ -31,7 +31,7 @@ const Deletitem = () => {
   
     try {
       //previousUrl:http://localhost:8080/detail/${adType}/${id}`
-      const response = await axios.delete(`http://srv620732.hstgr.cloud:8080/detail/${adType}/${id}`, {
+      const response = await axios.delete(`https://srv620732.hstgr.cloud:8443/detail/${adType}/${id}`, {
         headers: {
           'Authorization': 'Basic ' + btoa('Hello:123') // Basic Auth if needed
         }

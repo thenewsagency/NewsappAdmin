@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   const login = (username, password) => {
     //previousUrl=http://localhost:8080/Login/admin
     //mainlink https://newsapp-latest.onrender.com/Login/admin
-    return getWithBasicAuth('https://srv620732.hstgr.cloud:8080/Login/admin', username, password)
+    return getWithBasicAuth('https://srv620732.hstgr.cloud:8443/Login/admin', username, password)
       .then(data => {
         console.log("Login successful, setting isAuthenticated to true.");
         setIsAuthenticated(true); // Set authenticated if login succeeds

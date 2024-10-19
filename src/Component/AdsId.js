@@ -15,10 +15,10 @@ const AdsId = () => {
    let url;
    if (adType === "ads") {
      //url = `http://localhost:8080/ads/adsId`;
-     url = `http://srv620732.hstgr.cloud:8080/ads/adsId`;
+     url = `https://srv620732.hstgr.cloud:8443/ads/adsId`;
    } else {
      //url = `http://localhost:8080/getnews/NewsId`;
-     url = `http://srv620732.hstgr.cloud:8080/getnews/NewsId`;
+     url = `https://srv620732.hstgr.cloud:8443/getnews/NewsId`;
    }
 
 

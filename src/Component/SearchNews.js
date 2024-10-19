@@ -24,10 +24,10 @@ function SearchNews() {
       let url;
       if (adType === 'ads') {
         //url = `http://localhost:8080/ads/${adId}`;
-        url = `http://srv620732.hstgr.cloud:8080/ads/${adId}`;
+        url = `https://srv620732.hstgr.cloud:8443/ads/${adId}`;
       } else {
         //url = `http://localhost:8080/getnews/${adId}`;
-        url = `http://srv620732.hstgr.cloud:8080/getnews/${adId}`;
+        url = `https://srv620732.hstgr.cloud:8443/getnews/${adId}`;
       }
   
       try {
